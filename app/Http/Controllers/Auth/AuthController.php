@@ -21,7 +21,7 @@ class AuthController extends Controller
         ]);
 
         if($validator->fails()){
-            return response()->json(['errors' => $validator->errors()], 200);
+            return response()->json(['errors' => $validator->errors()], 400);
         }
 
         $date = Carbon::now();
@@ -41,6 +41,6 @@ class AuthController extends Controller
             ],200);
         }
 
-        return response()->json(['error' => 'Erro ao Cadastrar o Usuário.'], 200);
+        return response()->json(['error' => 'Erro ao Cadastrar o Usuário.'], 400);
     }
 }
