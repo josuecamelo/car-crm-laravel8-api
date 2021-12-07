@@ -15,6 +15,9 @@ class CreateVehicleBrandsTable extends Migration
     {
         Schema::create('vehicle_brands', function (Blueprint $table) {
             $table->id();
+            $table->string('label')->nullable();
+            $table->bigInteger('value')->nullable();
+            $table->smallInteger('vehicle_type_id')->nullable();
             $table->timestamps();
         });
     }

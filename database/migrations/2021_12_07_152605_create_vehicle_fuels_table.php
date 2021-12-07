@@ -15,6 +15,8 @@ class CreateVehicleFuelsTable extends Migration
     {
         Schema::create('vehicle_fuels', function (Blueprint $table) {
             $table->id();
+            $table->string('label')->nullable();
+            $table->bigInteger('value')->nullable();
             $table->timestamps();
         });
     }

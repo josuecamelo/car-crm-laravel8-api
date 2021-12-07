@@ -15,6 +15,10 @@ class CreateVehiclePhotosTable extends Migration
     {
         Schema::create('vehicle_photos', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('user_id')->nullable();
+            $table->bigInteger('vehicle_id')->nullable();
+            $table->string('img', 255)->nullable();
+            $table->bigInteger('order')->nullable();
             $table->timestamps();
         });
     }

@@ -15,6 +15,8 @@ class CreateVehicleCarSteeringsTable extends Migration
     {
         Schema::create('vehicle_car_steerings', function (Blueprint $table) {
             $table->id();
+            $table->string('label')->nullable();
+            $table->bigInteger('value')->nullable();
             $table->timestamps();
         });
     }

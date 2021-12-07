@@ -15,6 +15,8 @@ class CreateVehicleGerboxesTable extends Migration
     {
         Schema::create('vehicle_gerboxes', function (Blueprint $table) {
             $table->id();
+            $table->string('label')->nullable();
+            $table->bigInteger('value')->nullable();
             $table->timestamps();
         });
     }

@@ -15,6 +15,8 @@ class CreateVehicleMotorPowersTable extends Migration
     {
         Schema::create('vehicle_motor_powers', function (Blueprint $table) {
             $table->id();
+            $table->string('label')->nullable();
+            $table->bigInteger('value')->nullable();
             $table->timestamps();
         });
     }

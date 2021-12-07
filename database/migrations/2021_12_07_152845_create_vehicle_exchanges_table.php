@@ -15,6 +15,8 @@ class CreateVehicleExchangesTable extends Migration
     {
         Schema::create('vehicle_exchanges', function (Blueprint $table) {
             $table->id();
+            $table->string('label')->nullable();
+            $table->bigInteger('value')->nullable();
             $table->timestamps();
         });
     }

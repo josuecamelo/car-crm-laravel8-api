@@ -15,6 +15,10 @@ class CreateVehicleVersionsTable extends Migration
     {
         Schema::create('vehicle_versions', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('brand_id')->nullable();
+            $table->bigInteger('model_id')->nullable();
+            $table->string('label')->nullable();
+            $table->bigInteger('value')->nullable();
             $table->timestamps();
         });
     }

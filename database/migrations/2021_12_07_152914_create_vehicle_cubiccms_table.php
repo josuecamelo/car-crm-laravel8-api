@@ -15,6 +15,8 @@ class CreateVehicleCubiccmsTable extends Migration
     {
         Schema::create('vehicle_cubiccms', function (Blueprint $table) {
             $table->id();
+            $table->string('label')->nullable();
+            $table->bigInteger('value')->nullable();
             $table->timestamps();
         });
     }
