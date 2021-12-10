@@ -13,7 +13,7 @@ class CreateVehicleGerboxesTable extends Migration
      */
     public function up()
     {
-        Schema::create('vehicle_gerboxes', function (Blueprint $table) {
+        Schema::create('vehicle_gearboxes', function (Blueprint $table) {
             $table->id();
             $table->string('label')->nullable();
             $table->bigInteger('value')->nullable();
@@ -28,6 +28,6 @@ class CreateVehicleGerboxesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('vehicle_gerboxes');
+        Schema::dropIfExists('vehicle_gearboxes');
     }
 }
