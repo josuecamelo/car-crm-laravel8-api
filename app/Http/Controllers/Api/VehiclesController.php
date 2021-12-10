@@ -52,7 +52,7 @@ class VehiclesController extends Controller
      */
     public function index()
     {
-        //
+       
     }
 
     /**

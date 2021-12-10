@@ -9,7 +9,6 @@ class Vehicle extends Model
 {
     use HasFactory;
 
-
     public function vehiclePhotos() {
         return $this->hasMany(VehiclePhoto::class)->orderBy('order', 'ASC');
     }
