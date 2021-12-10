@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class VehicleExchange extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'label',
+        'value',
+        'created_at',
+        'updated_at',
+        ];
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DataScraping;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,4 +19,5 @@ Route::get('/', function () {
 });
 
 
-Route::get('scrapping-data/{tipoVeiculo}', [PlanoController::class, 'index']);
+Route::get('readjson/{tipoVeiculo}', [DataScraping::class, 'index']);
+Route::get('fields', [DataScraping::class, 'getFields']);

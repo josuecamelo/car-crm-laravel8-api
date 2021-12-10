@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class VehicleCubiccms extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'label',
+        'value',
+        'created_at',
+        'updated_at',
+        ];
 }

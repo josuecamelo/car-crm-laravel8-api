@@ -33,6 +33,7 @@ use App\Models\VehicleRegDate;
 use App\Models\VehicleType;
 use App\Models\VehicleVersion;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class DataScraping extends Controller
 {
@@ -190,6 +191,25 @@ class DataScraping extends Controller
             if(empty($valid)) {
                 VehicleType::create($item);
             }
+        }
+    }
+
+    public function getFields(){
+        $tables = DB::select('SHOW TABLES');
+        foreach($tables as $tableInfo){
+            $table = $tableInfo->Tables_in_carcrmapi;
+            $fields = DB::getSchemaBuilder()->getColumnListing($table);
+            unset($fields[0]);
+            
+            echo "Tabela: ". $table."<br />";
+            $str="protected \$fillable = [<br />";
+
+            foreach($fields as $f){
+                $str.="'$f',<br />";
+            }
+
+            echo $str."];";
+            echo "<hr /><br />";
         }
     }
 }
